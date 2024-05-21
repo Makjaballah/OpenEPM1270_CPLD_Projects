@@ -1,0 +1,11 @@
+Fitter Status : Successful - Sat Sep 16 16:21:56 2023
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : LED
+Top-level Entity Name : LED
+Family : MAX II
+Device : EPM1270T144C5
+Timing Models : Final
+Total logic elements : 62 / 1,270 ( 5 % )
+Total pins : 5 / 116 ( 4 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )
