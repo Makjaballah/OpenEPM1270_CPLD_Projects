@@ -1,0 +1,78 @@
+|pwm_duty
+clk => DFF_Debounce:stage0.CLK
+clk => counter_pwm[0].CLK
+clk => counter_pwm[1].CLK
+clk => counter_pwm[2].CLK
+clk => counter_pwm[3].CLK
+clk => counter_pwm[4].CLK
+clk => counter_pwm[5].CLK
+clk => Duty_cycle[0].CLK
+clk => Duty_cycle[1].CLK
+clk => Duty_cycle[2].CLK
+clk => Duty_cycle[3].CLK
+clk => Duty_cycle[4].CLK
+clk => Duty_cycle[5].CLK
+clk => counter_slow[0].CLK
+clk => counter_slow[1].CLK
+clk => counter_slow[2].CLK
+clk => counter_slow[3].CLK
+clk => counter_slow[4].CLK
+clk => counter_slow[5].CLK
+clk => counter_slow[6].CLK
+clk => counter_slow[7].CLK
+clk => counter_slow[8].CLK
+clk => counter_slow[9].CLK
+clk => counter_slow[10].CLK
+clk => counter_slow[11].CLK
+clk => counter_slow[12].CLK
+clk => counter_slow[13].CLK
+clk => counter_slow[14].CLK
+clk => counter_slow[15].CLK
+clk => counter_slow[16].CLK
+clk => counter_slow[17].CLK
+clk => counter_slow[18].CLK
+clk => counter_slow[19].CLK
+clk => counter_slow[20].CLK
+clk => counter_slow[21].CLK
+clk => counter_slow[22].CLK
+clk => counter_slow[23].CLK
+clk => counter_slow[24].CLK
+clk => counter_slow[25].CLK
+clk => counter_slow[26].CLK
+clk => counter_slow[27].CLK
+clk => DFF_Debounce:stage1.CLK
+clk => DFF_Debounce:stage2.CLK
+clk => DFF_Debounce:stage3.CLK
+Duty_increase => DFF_Debounce:stage0.D
+Duty_decrease => DFF_Debounce:stage2.D
+pwm_out <= LessThan4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pwm_duty|DFF_Debounce:stage0
+CLK => Q~reg0.CLK
+en => Q~reg0.ENA
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pwm_duty|DFF_Debounce:stage1
+CLK => Q~reg0.CLK
+en => Q~reg0.ENA
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pwm_duty|DFF_Debounce:stage2
+CLK => Q~reg0.CLK
+en => Q~reg0.ENA
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pwm_duty|DFF_Debounce:stage3
+CLK => Q~reg0.CLK
+en => Q~reg0.ENA
+D => Q~reg0.DATAIN
+Q <= Q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

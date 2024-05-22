@@ -1,0 +1,48 @@
+Library ieee;
+Use ieee.std_logic_1164.all;
+Use ieee.std_logic_unsigned.all;
+Use ieee.std_logic_arith.all;
+
+
+entity pwm_duty is
+port (
+   clk: in std_logic; 
+   Duty_increase : in std_logic; -- button to increase duty cycle by 10%
+   Duty_decrease : in std_logic; -- button to decrease duty cycle by 10%
+   pwm_out: out std_logic -- PWM signal out with frequency of 10MHz
+  );
+end pwm_duty;
+
+
+
+
+Architecture Behavioral of pwm_duty is
+
+ Signal counter_pwm: std_logic_vector(3 downto 0):=(others => '0');
+ Signal Duty_cycle: std_logic_vector(3 downto 0):=x"5";
+ 
+ begin
+ 
+ process(clk)
+ begin
+  if(rising_edge(clk)) then
+   if(Duty_increase ='1' and Duty_cycle <= x"9") then
+    Duty_cycle <= Duty_cycle + x"1";--increase duty cycle by 10%
+   elsif(Duty_decrease ='1' and Duty_cycle >= X"1") then
+    Duty_cycle <= Duty_cycle - X"1";--decrease duty cycle by 10%
+   end if;
+  end if;
+ end process;
+ 
+ -- Create 10MHz PWM signal
+ process(clk)
+ begin
+  if(rising_edge(clk)) then
+   counter_pwm <= counter_pwm + X"1";
+   if(counter_pwm >= X"9") then
+    counter_pwm <= X"0";
+   end if;
+  end if;
+ end process;
+ pwm_out <= '1' when counter_PWM < Duty_cycle else '0';
+end Behavioral;
