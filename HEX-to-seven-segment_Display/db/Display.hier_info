@@ -1,0 +1,43 @@
+|Display
+rst => Glide[0].ACLR
+rst => Glide[1].ACLR
+rst => Glide[2].ACLR
+rst => Glide[3].ACLR
+rst => Count[0].ACLR
+rst => Count[1].ACLR
+rst => Count[2].ACLR
+rst => Count[3].ACLR
+rst => Count[4].ACLR
+rst => Count[5].ACLR
+rst => reflash[1].ENA
+rst => reflash[0].ENA
+rst => Digit_Select[3]~reg0.ENA
+rst => Digit_Select[2]~reg0.ENA
+rst => Digit_Select[1]~reg0.ENA
+rst => Digit_Select[0]~reg0.ENA
+rst => led[3].ENA
+rst => led[2].ENA
+rst => led[1].ENA
+rst => led[0].ENA
+rst => Period1uS.ENA
+clk => Period1uS.CLK
+clk => Count[0].CLK
+clk => Count[1].CLK
+clk => Count[2].CLK
+clk => Count[3].CLK
+clk => Count[4].CLK
+clk => Count[5].CLK
+led_Out[0] << Mux6.DB_MAX_OUTPUT_PORT_TYPE
+led_Out[1] << Mux5.DB_MAX_OUTPUT_PORT_TYPE
+led_Out[2] << Mux4.DB_MAX_OUTPUT_PORT_TYPE
+led_Out[3] << Mux3.DB_MAX_OUTPUT_PORT_TYPE
+led_Out[4] << Mux2.DB_MAX_OUTPUT_PORT_TYPE
+led_Out[5] << Mux1.DB_MAX_OUTPUT_PORT_TYPE
+led_Out[6] << Mux0.DB_MAX_OUTPUT_PORT_TYPE
+led_Out[7] << <VCC>
+Digit_Select[0] << Digit_Select[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Digit_Select[1] << Digit_Select[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Digit_Select[2] << Digit_Select[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Digit_Select[3] << Digit_Select[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

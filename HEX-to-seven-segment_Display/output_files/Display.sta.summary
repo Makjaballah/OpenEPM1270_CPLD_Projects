@@ -1,0 +1,53 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'Period1uS'
+Slack : -6.181
+TNS   : -61.599
+
+Type  : Setup 'Period1mS'
+Slack : -6.102
+TNS   : -59.900
+
+Type  : Setup 'clk'
+Slack : -5.769
+TNS   : -34.580
+
+Type  : Setup 'Period1S'
+Slack : -2.608
+TNS   : -25.560
+
+Type  : Hold 'Period1S'
+Slack : 1.078
+TNS   : 0.000
+
+Type  : Hold 'Period1mS'
+Slack : 1.646
+TNS   : 0.000
+
+Type  : Hold 'clk'
+Slack : 1.662
+TNS   : 0.000
+
+Type  : Hold 'Period1uS'
+Slack : 2.398
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clk'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'Period1S'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'Period1mS'
+Slack : 0.234
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'Period1uS'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------
