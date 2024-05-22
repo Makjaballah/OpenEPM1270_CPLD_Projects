@@ -1,0 +1,32 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+USE IEEE.STD_LOGIC_ARITH.ALL;
+
+Entity Frequency_4hz is 
+port (
+	reset:  in  std_logic;
+	clk  :  in std_logic; 
+	pwm_out :  out std_logic 
+);
+End Frequency_4hz;
+
+Architecture Behavioral OF Frequency_4hz IS
+
+signal counter_slow: std_logic_vector(27 downto 0):=(others => '0');-- counter for creating slow clock
+
+begin
+begin
+
+ process(clk)
+ begin
+  if(rising_edge(clk)) then
+   counter_slow <= counter_slow + x"0000001";
+   if(counter_slow >= x"BEBC20") then 
+   counter_slow <= x"0000000";
+   end if;
+  end if;
+ end process;
+pwm_out <= '1' when counter_slow = x"BEBC20" else '0'
+end Behavioral;
+		
