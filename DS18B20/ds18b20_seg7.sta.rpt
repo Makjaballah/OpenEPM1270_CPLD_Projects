@@ -1,0 +1,753 @@
+Timing Analyzer report for ds18b20_seg7
+Sun Sep 17 14:28:45 2023
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'ds18b20_drive:ds18b20_u0|clk_1us'
+ 12. Setup: 'CLOCK_50'
+ 13. Hold: 'CLOCK_50'
+ 14. Hold: 'ds18b20_drive:ds18b20_u0|clk_1us'
+ 15. Setup Transfers
+ 16. Hold Transfers
+ 17. Report TCCS
+ 18. Report RSKM
+ 19. Unconstrained Paths Summary
+ 20. Clock Status Summary
+ 21. Unconstrained Input Ports
+ 22. Unconstrained Output Ports
+ 23. Unconstrained Input Ports
+ 24. Unconstrained Output Ports
+ 25. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                     ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                              ;
+; Revision Name         ; ds18b20_seg7                                        ;
+; Device Family         ; MAX II                                              ;
+; Device Name           ; EPM1270T144C5                                       ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Slow Model                                          ;
+; Rise/Fall Delays      ; Unavailable                                         ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                             ;
++----------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------------+
+; Clock Name                       ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                              ;
++----------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------------+
+; CLOCK_50                         ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK_50 }                         ;
+; ds18b20_drive:ds18b20_u0|clk_1us ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { ds18b20_drive:ds18b20_u0|clk_1us } ;
++----------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Fmax Summary                                                          ;
++-----------+-----------------+----------------------------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name                       ; Note ;
++-----------+-----------------+----------------------------------+------+
+; 74.52 MHz ; 74.52 MHz       ; ds18b20_drive:ds18b20_u0|clk_1us ;      ;
+; 163.4 MHz ; 163.4 MHz       ; CLOCK_50                         ;      ;
++-----------+-----------------+----------------------------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++------------------------------------------------------------+
+; Setup Summary                                              ;
++----------------------------------+---------+---------------+
+; Clock                            ; Slack   ; End Point TNS ;
++----------------------------------+---------+---------------+
+; ds18b20_drive:ds18b20_u0|clk_1us ; -12.420 ; -424.017      ;
+; CLOCK_50                         ; -5.120  ; -126.055      ;
++----------------------------------+---------+---------------+
+
+
++----------------------------------------------------------+
+; Hold Summary                                             ;
++----------------------------------+-------+---------------+
+; Clock                            ; Slack ; End Point TNS ;
++----------------------------------+-------+---------------+
+; CLOCK_50                         ; 1.646 ; 0.000         ;
+; ds18b20_drive:ds18b20_u0|clk_1us ; 1.649 ; 0.000         ;
++----------------------------------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++-----------------------------------------------------------+
+; Minimum Pulse Width Summary                               ;
++----------------------------------+--------+---------------+
+; Clock                            ; Slack  ; End Point TNS ;
++----------------------------------+--------+---------------+
+; CLOCK_50                         ; -2.289 ; -2.289        ;
+; ds18b20_drive:ds18b20_u0|clk_1us ; 0.234  ; 0.000         ;
++----------------------------------+--------+---------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'ds18b20_drive:ds18b20_u0|clk_1us'                                                                                                                                                                ;
++---------+--------------------------------------+------------------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+; Slack   ; From Node                            ; To Node                                  ; Launch Clock                     ; Latch Clock                      ; Relationship ; Clock Skew ; Data Delay ;
++---------+--------------------------------------+------------------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+; -12.420 ; ds18b20_drive:ds18b20_u0|cnt_1us[14] ; ds18b20_drive:ds18b20_u0|state.S2        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 13.087     ;
+; -12.232 ; ds18b20_drive:ds18b20_u0|cnt_1us[14] ; ds18b20_drive:ds18b20_u0|state.S6        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 12.899     ;
+; -12.232 ; ds18b20_drive:ds18b20_u0|cnt_1us[14] ; ds18b20_drive:ds18b20_u0|state.WRITE0    ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 12.899     ;
+; -11.882 ; ds18b20_drive:ds18b20_u0|cnt_1us[13] ; ds18b20_drive:ds18b20_u0|state.S2        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 12.549     ;
+; -11.765 ; ds18b20_drive:ds18b20_u0|cnt_1us[19] ; ds18b20_drive:ds18b20_u0|state.S2        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 12.432     ;
+; -11.729 ; ds18b20_drive:ds18b20_u0|cnt_1us[12] ; ds18b20_drive:ds18b20_u0|state.S2        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 12.396     ;
+; -11.694 ; ds18b20_drive:ds18b20_u0|cnt_1us[13] ; ds18b20_drive:ds18b20_u0|state.S6        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 12.361     ;
+; -11.694 ; ds18b20_drive:ds18b20_u0|cnt_1us[13] ; ds18b20_drive:ds18b20_u0|state.WRITE0    ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 12.361     ;
+; -11.677 ; ds18b20_drive:ds18b20_u0|cnt_1us[14] ; ds18b20_drive:ds18b20_u0|state.S3        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 12.344     ;
+; -11.577 ; ds18b20_drive:ds18b20_u0|cnt_1us[19] ; ds18b20_drive:ds18b20_u0|state.S6        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 12.244     ;
+; -11.577 ; ds18b20_drive:ds18b20_u0|cnt_1us[19] ; ds18b20_drive:ds18b20_u0|state.WRITE0    ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 12.244     ;
+; -11.556 ; ds18b20_drive:ds18b20_u0|cnt_1us[16] ; ds18b20_drive:ds18b20_u0|state.S2        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 12.223     ;
+; -11.541 ; ds18b20_drive:ds18b20_u0|cnt_1us[12] ; ds18b20_drive:ds18b20_u0|state.S6        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 12.208     ;
+; -11.541 ; ds18b20_drive:ds18b20_u0|cnt_1us[12] ; ds18b20_drive:ds18b20_u0|state.WRITE0    ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 12.208     ;
+; -11.464 ; ds18b20_drive:ds18b20_u0|cnt_1us[9]  ; ds18b20_drive:ds18b20_u0|state.S2        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 12.131     ;
+; -11.421 ; ds18b20_drive:ds18b20_u0|step[3]     ; ds18b20_drive:ds18b20_u0|state.S6        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 12.088     ;
+; -11.421 ; ds18b20_drive:ds18b20_u0|step[3]     ; ds18b20_drive:ds18b20_u0|state.WRITE0    ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 12.088     ;
+; -11.390 ; ds18b20_drive:ds18b20_u0|cnt_1us[17] ; ds18b20_drive:ds18b20_u0|state.S2        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 12.057     ;
+; -11.381 ; ds18b20_drive:ds18b20_u0|cnt_1us[14] ; ds18b20_drive:ds18b20_u0|one_wire_buf~en ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 12.048     ;
+; -11.368 ; ds18b20_drive:ds18b20_u0|cnt_1us[16] ; ds18b20_drive:ds18b20_u0|state.S6        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 12.035     ;
+; -11.368 ; ds18b20_drive:ds18b20_u0|cnt_1us[16] ; ds18b20_drive:ds18b20_u0|state.WRITE0    ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 12.035     ;
+; -11.362 ; ds18b20_drive:ds18b20_u0|cnt_1us[18] ; ds18b20_drive:ds18b20_u0|state.S2        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 12.029     ;
+; -11.351 ; ds18b20_drive:ds18b20_u0|cnt_1us[14] ; ds18b20_drive:ds18b20_u0|cnt_1us_clear   ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 12.018     ;
+; -11.332 ; ds18b20_drive:ds18b20_u0|step[2]     ; ds18b20_drive:ds18b20_u0|state.S6        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.999     ;
+; -11.332 ; ds18b20_drive:ds18b20_u0|step[2]     ; ds18b20_drive:ds18b20_u0|state.WRITE0    ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.999     ;
+; -11.309 ; ds18b20_drive:ds18b20_u0|cnt_1us[11] ; ds18b20_drive:ds18b20_u0|state.S2        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.976     ;
+; -11.276 ; ds18b20_drive:ds18b20_u0|cnt_1us[9]  ; ds18b20_drive:ds18b20_u0|state.S6        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.943     ;
+; -11.276 ; ds18b20_drive:ds18b20_u0|cnt_1us[9]  ; ds18b20_drive:ds18b20_u0|state.WRITE0    ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.943     ;
+; -11.202 ; ds18b20_drive:ds18b20_u0|cnt_1us[17] ; ds18b20_drive:ds18b20_u0|state.S6        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.869     ;
+; -11.202 ; ds18b20_drive:ds18b20_u0|cnt_1us[17] ; ds18b20_drive:ds18b20_u0|state.WRITE0    ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.869     ;
+; -11.193 ; ds18b20_drive:ds18b20_u0|cnt_1us[4]  ; ds18b20_drive:ds18b20_u0|state.S6        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.860     ;
+; -11.193 ; ds18b20_drive:ds18b20_u0|cnt_1us[4]  ; ds18b20_drive:ds18b20_u0|state.WRITE0    ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.860     ;
+; -11.174 ; ds18b20_drive:ds18b20_u0|cnt_1us[18] ; ds18b20_drive:ds18b20_u0|state.S6        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.841     ;
+; -11.174 ; ds18b20_drive:ds18b20_u0|cnt_1us[18] ; ds18b20_drive:ds18b20_u0|state.WRITE0    ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.841     ;
+; -11.147 ; ds18b20_drive:ds18b20_u0|cnt_1us[4]  ; ds18b20_drive:ds18b20_u0|state.S2        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.814     ;
+; -11.139 ; ds18b20_drive:ds18b20_u0|cnt_1us[13] ; ds18b20_drive:ds18b20_u0|state.S3        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.806     ;
+; -11.137 ; ds18b20_drive:ds18b20_u0|cnt_1us[5]  ; ds18b20_drive:ds18b20_u0|state.S2        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.804     ;
+; -11.121 ; ds18b20_drive:ds18b20_u0|step[1]     ; ds18b20_drive:ds18b20_u0|state.S6        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.788     ;
+; -11.121 ; ds18b20_drive:ds18b20_u0|step[1]     ; ds18b20_drive:ds18b20_u0|state.WRITE0    ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.788     ;
+; -11.121 ; ds18b20_drive:ds18b20_u0|cnt_1us[11] ; ds18b20_drive:ds18b20_u0|state.S6        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.788     ;
+; -11.121 ; ds18b20_drive:ds18b20_u0|cnt_1us[11] ; ds18b20_drive:ds18b20_u0|state.WRITE0    ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.788     ;
+; -11.069 ; ds18b20_drive:ds18b20_u0|cnt_1us[15] ; ds18b20_drive:ds18b20_u0|state.S2        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.736     ;
+; -11.028 ; ds18b20_drive:ds18b20_u0|cnt_1us[2]  ; ds18b20_drive:ds18b20_u0|state.S6        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.695     ;
+; -11.028 ; ds18b20_drive:ds18b20_u0|cnt_1us[2]  ; ds18b20_drive:ds18b20_u0|state.WRITE0    ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.695     ;
+; -11.022 ; ds18b20_drive:ds18b20_u0|cnt_1us[19] ; ds18b20_drive:ds18b20_u0|state.S3        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.689     ;
+; -11.013 ; ds18b20_drive:ds18b20_u0|cnt_1us[3]  ; ds18b20_drive:ds18b20_u0|state.S6        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.680     ;
+; -11.013 ; ds18b20_drive:ds18b20_u0|cnt_1us[3]  ; ds18b20_drive:ds18b20_u0|state.WRITE0    ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.680     ;
+; -10.986 ; ds18b20_drive:ds18b20_u0|cnt_1us[12] ; ds18b20_drive:ds18b20_u0|state.S3        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.653     ;
+; -10.982 ; ds18b20_drive:ds18b20_u0|cnt_1us[2]  ; ds18b20_drive:ds18b20_u0|state.S2        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.649     ;
+; -10.974 ; ds18b20_drive:ds18b20_u0|cnt_1us[10] ; ds18b20_drive:ds18b20_u0|state.S2        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.641     ;
+; -10.967 ; ds18b20_drive:ds18b20_u0|cnt_1us[3]  ; ds18b20_drive:ds18b20_u0|state.S2        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.634     ;
+; -10.881 ; ds18b20_drive:ds18b20_u0|cnt_1us[15] ; ds18b20_drive:ds18b20_u0|state.S6        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.548     ;
+; -10.881 ; ds18b20_drive:ds18b20_u0|cnt_1us[15] ; ds18b20_drive:ds18b20_u0|state.WRITE0    ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.548     ;
+; -10.843 ; ds18b20_drive:ds18b20_u0|cnt_1us[13] ; ds18b20_drive:ds18b20_u0|one_wire_buf~en ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.510     ;
+; -10.813 ; ds18b20_drive:ds18b20_u0|cnt_1us[16] ; ds18b20_drive:ds18b20_u0|state.S3        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.480     ;
+; -10.813 ; ds18b20_drive:ds18b20_u0|cnt_1us[13] ; ds18b20_drive:ds18b20_u0|cnt_1us_clear   ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.480     ;
+; -10.786 ; ds18b20_drive:ds18b20_u0|cnt_1us[10] ; ds18b20_drive:ds18b20_u0|state.S6        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.453     ;
+; -10.786 ; ds18b20_drive:ds18b20_u0|cnt_1us[10] ; ds18b20_drive:ds18b20_u0|state.WRITE0    ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.453     ;
+; -10.726 ; ds18b20_drive:ds18b20_u0|cnt_1us[19] ; ds18b20_drive:ds18b20_u0|one_wire_buf~en ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.393     ;
+; -10.721 ; ds18b20_drive:ds18b20_u0|cnt_1us[9]  ; ds18b20_drive:ds18b20_u0|state.S3        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.388     ;
+; -10.696 ; ds18b20_drive:ds18b20_u0|cnt_1us[19] ; ds18b20_drive:ds18b20_u0|cnt_1us_clear   ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.363     ;
+; -10.690 ; ds18b20_drive:ds18b20_u0|cnt_1us[12] ; ds18b20_drive:ds18b20_u0|one_wire_buf~en ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.357     ;
+; -10.677 ; ds18b20_drive:ds18b20_u0|cnt_1us[0]  ; ds18b20_drive:ds18b20_u0|state.S6        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.344     ;
+; -10.677 ; ds18b20_drive:ds18b20_u0|cnt_1us[0]  ; ds18b20_drive:ds18b20_u0|state.WRITE0    ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.344     ;
+; -10.674 ; ds18b20_drive:ds18b20_u0|step[3]     ; ds18b20_drive:ds18b20_u0|state.S2        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.341     ;
+; -10.660 ; ds18b20_drive:ds18b20_u0|cnt_1us[12] ; ds18b20_drive:ds18b20_u0|cnt_1us_clear   ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.327     ;
+; -10.649 ; ds18b20_drive:ds18b20_u0|cnt_1us[5]  ; ds18b20_drive:ds18b20_u0|state.S6        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.316     ;
+; -10.649 ; ds18b20_drive:ds18b20_u0|cnt_1us[5]  ; ds18b20_drive:ds18b20_u0|state.WRITE0    ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.316     ;
+; -10.647 ; ds18b20_drive:ds18b20_u0|cnt_1us[17] ; ds18b20_drive:ds18b20_u0|state.S3        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.314     ;
+; -10.631 ; ds18b20_drive:ds18b20_u0|cnt_1us[0]  ; ds18b20_drive:ds18b20_u0|state.S2        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.298     ;
+; -10.629 ; ds18b20_drive:ds18b20_u0|cnt_1us[8]  ; ds18b20_drive:ds18b20_u0|state.S2        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.296     ;
+; -10.619 ; ds18b20_drive:ds18b20_u0|cnt_1us[18] ; ds18b20_drive:ds18b20_u0|state.S3        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.286     ;
+; -10.616 ; ds18b20_drive:ds18b20_u0|cnt_1us[7]  ; ds18b20_drive:ds18b20_u0|state.S6        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.283     ;
+; -10.616 ; ds18b20_drive:ds18b20_u0|cnt_1us[7]  ; ds18b20_drive:ds18b20_u0|state.WRITE0    ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.283     ;
+; -10.585 ; ds18b20_drive:ds18b20_u0|step[2]     ; ds18b20_drive:ds18b20_u0|state.S2        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.252     ;
+; -10.570 ; ds18b20_drive:ds18b20_u0|cnt_1us[7]  ; ds18b20_drive:ds18b20_u0|state.S2        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.237     ;
+; -10.566 ; ds18b20_drive:ds18b20_u0|cnt_1us[11] ; ds18b20_drive:ds18b20_u0|state.S3        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.233     ;
+; -10.517 ; ds18b20_drive:ds18b20_u0|cnt_1us[16] ; ds18b20_drive:ds18b20_u0|one_wire_buf~en ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.184     ;
+; -10.487 ; ds18b20_drive:ds18b20_u0|cnt_1us[16] ; ds18b20_drive:ds18b20_u0|cnt_1us_clear   ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.154     ;
+; -10.435 ; ds18b20_drive:ds18b20_u0|cnt_1us[9]  ; ds18b20_drive:ds18b20_u0|cnt_1us_clear   ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.102     ;
+; -10.425 ; ds18b20_drive:ds18b20_u0|cnt_1us[9]  ; ds18b20_drive:ds18b20_u0|one_wire_buf~en ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.092     ;
+; -10.404 ; ds18b20_drive:ds18b20_u0|cnt_1us[4]  ; ds18b20_drive:ds18b20_u0|state.S3        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.071     ;
+; -10.394 ; ds18b20_drive:ds18b20_u0|cnt_1us[5]  ; ds18b20_drive:ds18b20_u0|state.S3        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.061     ;
+; -10.374 ; ds18b20_drive:ds18b20_u0|step[1]     ; ds18b20_drive:ds18b20_u0|state.S2        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.041     ;
+; -10.351 ; ds18b20_drive:ds18b20_u0|cnt_1us[17] ; ds18b20_drive:ds18b20_u0|one_wire_buf~en ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.018     ;
+; -10.347 ; ds18b20_drive:ds18b20_u0|cnt_1us[6]  ; ds18b20_drive:ds18b20_u0|state.S2        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 11.014     ;
+; -10.326 ; ds18b20_drive:ds18b20_u0|cnt_1us[15] ; ds18b20_drive:ds18b20_u0|state.S3        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 10.993     ;
+; -10.323 ; ds18b20_drive:ds18b20_u0|cnt_1us[18] ; ds18b20_drive:ds18b20_u0|one_wire_buf~en ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 10.990     ;
+; -10.321 ; ds18b20_drive:ds18b20_u0|cnt_1us[17] ; ds18b20_drive:ds18b20_u0|cnt_1us_clear   ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 10.988     ;
+; -10.293 ; ds18b20_drive:ds18b20_u0|cnt_1us[18] ; ds18b20_drive:ds18b20_u0|cnt_1us_clear   ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 10.960     ;
+; -10.280 ; ds18b20_drive:ds18b20_u0|cnt_1us[11] ; ds18b20_drive:ds18b20_u0|cnt_1us_clear   ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 10.947     ;
+; -10.270 ; ds18b20_drive:ds18b20_u0|cnt_1us[11] ; ds18b20_drive:ds18b20_u0|one_wire_buf~en ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 10.937     ;
+; -10.255 ; ds18b20_drive:ds18b20_u0|cnt_1us[1]  ; ds18b20_drive:ds18b20_u0|state.S6        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 10.922     ;
+; -10.255 ; ds18b20_drive:ds18b20_u0|cnt_1us[1]  ; ds18b20_drive:ds18b20_u0|state.WRITE0    ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 10.922     ;
+; -10.239 ; ds18b20_drive:ds18b20_u0|cnt_1us[2]  ; ds18b20_drive:ds18b20_u0|state.S3        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 10.906     ;
+; -10.231 ; ds18b20_drive:ds18b20_u0|cnt_1us[10] ; ds18b20_drive:ds18b20_u0|state.S3        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 10.898     ;
+; -10.224 ; ds18b20_drive:ds18b20_u0|cnt_1us[3]  ; ds18b20_drive:ds18b20_u0|state.S3        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 10.891     ;
+; -10.220 ; ds18b20_drive:ds18b20_u0|cnt_1us[8]  ; ds18b20_drive:ds18b20_u0|state.S6        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 10.887     ;
+; -10.220 ; ds18b20_drive:ds18b20_u0|cnt_1us[8]  ; ds18b20_drive:ds18b20_u0|state.WRITE0    ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 10.887     ;
+; -10.209 ; ds18b20_drive:ds18b20_u0|cnt_1us[1]  ; ds18b20_drive:ds18b20_u0|state.S2        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 1.000        ; 0.000      ; 10.876     ;
++---------+--------------------------------------+------------------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'CLOCK_50'                                                                                                                                                                    ;
++--------+----------------------------------------------+------------------------------------+----------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                    ; To Node                            ; Launch Clock                     ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+----------------------------------------------+------------------------------------+----------------------------------+-------------+--------------+------------+------------+
+; -5.120 ; ds18b20_drive:ds18b20_u0|cnt[1]              ; ds18b20_drive:ds18b20_u0|cnt[4]    ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 5.787      ;
+; -5.070 ; seg_dynamic_drive:seg7_u0|cnt[16]            ; seg_dynamic_drive:seg7_u0|HEX[1]   ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 5.737      ;
+; -4.963 ; ds18b20_drive:ds18b20_u0|cnt[1]              ; ds18b20_drive:ds18b20_u0|cnt[5]    ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 5.630      ;
+; -4.920 ; seg_dynamic_drive:seg7_u0|cnt[15]            ; seg_dynamic_drive:seg7_u0|HEX[1]   ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 5.587      ;
+; -4.832 ; seg_dynamic_drive:seg7_u0|cnt[16]            ; seg_dynamic_drive:seg7_u0|HEX[3]   ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 5.499      ;
+; -4.831 ; ds18b20_drive:ds18b20_u0|cnt[2]              ; ds18b20_drive:ds18b20_u0|clk_1us   ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 5.498      ;
+; -4.682 ; seg_dynamic_drive:seg7_u0|cnt[15]            ; seg_dynamic_drive:seg7_u0|HEX[3]   ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 5.349      ;
+; -4.620 ; ds18b20_drive:ds18b20_u0|temperature_buf[7]  ; seg_dynamic_drive:seg7_u0|HEX[1]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 1.000        ; -0.127     ; 5.160      ;
+; -4.584 ; ds18b20_drive:ds18b20_u0|cnt[0]              ; ds18b20_drive:ds18b20_u0|cnt[4]    ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 5.251      ;
+; -4.581 ; ds18b20_drive:ds18b20_u0|cnt[1]              ; ds18b20_drive:ds18b20_u0|clk_1us   ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 5.248      ;
+; -4.551 ; ds18b20_drive:ds18b20_u0|temperature_buf[5]  ; seg_dynamic_drive:seg7_u0|HEX[0]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 1.000        ; -0.127     ; 5.091      ;
+; -4.550 ; ds18b20_drive:ds18b20_u0|cnt[2]              ; ds18b20_drive:ds18b20_u0|cnt[4]    ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 5.217      ;
+; -4.507 ; ds18b20_drive:ds18b20_u0|temperature_buf[8]  ; seg_dynamic_drive:seg7_u0|HEX[1]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 1.000        ; -0.127     ; 5.047      ;
+; -4.435 ; ds18b20_drive:ds18b20_u0|temperature_buf[4]  ; seg_dynamic_drive:seg7_u0|HEX[1]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 1.000        ; -0.127     ; 4.975      ;
+; -4.427 ; ds18b20_drive:ds18b20_u0|cnt[0]              ; ds18b20_drive:ds18b20_u0|cnt[5]    ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 5.094      ;
+; -4.419 ; ds18b20_drive:ds18b20_u0|temperature_buf[6]  ; seg_dynamic_drive:seg7_u0|HEX[0]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 1.000        ; -0.127     ; 4.959      ;
+; -4.393 ; ds18b20_drive:ds18b20_u0|cnt[2]              ; ds18b20_drive:ds18b20_u0|cnt[5]    ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 5.060      ;
+; -4.313 ; seg_dynamic_drive:seg7_u0|cnt[1]             ; seg_dynamic_drive:seg7_u0|cnt[13]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.980      ;
+; -4.313 ; seg_dynamic_drive:seg7_u0|cnt[1]             ; seg_dynamic_drive:seg7_u0|cnt[12]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.980      ;
+; -4.313 ; seg_dynamic_drive:seg7_u0|cnt[1]             ; seg_dynamic_drive:seg7_u0|cnt[11]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.980      ;
+; -4.313 ; seg_dynamic_drive:seg7_u0|cnt[1]             ; seg_dynamic_drive:seg7_u0|cnt[10]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.980      ;
+; -4.313 ; seg_dynamic_drive:seg7_u0|cnt[1]             ; seg_dynamic_drive:seg7_u0|cnt[9]   ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.980      ;
+; -4.300 ; seg_dynamic_drive:seg7_u0|cnt[1]             ; seg_dynamic_drive:seg7_u0|cnt[16]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.967      ;
+; -4.300 ; seg_dynamic_drive:seg7_u0|cnt[1]             ; seg_dynamic_drive:seg7_u0|cnt[15]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.967      ;
+; -4.300 ; seg_dynamic_drive:seg7_u0|cnt[1]             ; seg_dynamic_drive:seg7_u0|cnt[14]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.967      ;
+; -4.296 ; ds18b20_drive:ds18b20_u0|cnt[1]              ; ds18b20_drive:ds18b20_u0|cnt[2]    ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.963      ;
+; -4.291 ; ds18b20_drive:ds18b20_u0|cnt[3]              ; ds18b20_drive:ds18b20_u0|cnt[4]    ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.958      ;
+; -4.247 ; ds18b20_drive:ds18b20_u0|temperature_buf[5]  ; seg_dynamic_drive:seg7_u0|HEX[1]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 1.000        ; -0.127     ; 4.787      ;
+; -4.215 ; ds18b20_drive:ds18b20_u0|temperature_buf[7]  ; seg_dynamic_drive:seg7_u0|HEX[0]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 1.000        ; -0.127     ; 4.755      ;
+; -4.193 ; ds18b20_drive:ds18b20_u0|temperature_buf[10] ; seg_dynamic_drive:seg7_u0|HEX[1]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 1.000        ; -0.127     ; 4.733      ;
+; -4.185 ; ds18b20_drive:ds18b20_u0|cnt[4]              ; ds18b20_drive:ds18b20_u0|cnt[5]    ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.852      ;
+; -4.134 ; ds18b20_drive:ds18b20_u0|cnt[3]              ; ds18b20_drive:ds18b20_u0|cnt[5]    ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.801      ;
+; -4.112 ; ds18b20_drive:ds18b20_u0|temperature_buf[7]  ; seg_dynamic_drive:seg7_u0|HEX[3]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 1.000        ; -0.127     ; 4.652      ;
+; -4.018 ; ds18b20_drive:ds18b20_u0|cnt[1]              ; ds18b20_drive:ds18b20_u0|cnt[3]    ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.685      ;
+; -3.979 ; ds18b20_drive:ds18b20_u0|temperature_buf[2]  ; seg_dynamic_drive:seg7_u0|HEX[3]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 1.000        ; -0.127     ; 4.519      ;
+; -3.973 ; seg_dynamic_drive:seg7_u0|cnt[4]             ; seg_dynamic_drive:seg7_u0|cnt[13]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.640      ;
+; -3.973 ; seg_dynamic_drive:seg7_u0|cnt[4]             ; seg_dynamic_drive:seg7_u0|cnt[12]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.640      ;
+; -3.973 ; seg_dynamic_drive:seg7_u0|cnt[4]             ; seg_dynamic_drive:seg7_u0|cnt[11]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.640      ;
+; -3.973 ; seg_dynamic_drive:seg7_u0|cnt[4]             ; seg_dynamic_drive:seg7_u0|cnt[10]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.640      ;
+; -3.973 ; seg_dynamic_drive:seg7_u0|cnt[4]             ; seg_dynamic_drive:seg7_u0|cnt[9]   ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.640      ;
+; -3.971 ; ds18b20_drive:ds18b20_u0|temperature_buf[8]  ; seg_dynamic_drive:seg7_u0|HEX[0]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 1.000        ; -0.127     ; 4.511      ;
+; -3.967 ; ds18b20_drive:ds18b20_u0|temperature_buf[7]  ; seg_dynamic_drive:seg7_u0|HEX[2]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 1.000        ; -0.127     ; 4.507      ;
+; -3.960 ; seg_dynamic_drive:seg7_u0|cnt[4]             ; seg_dynamic_drive:seg7_u0|cnt[16]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.627      ;
+; -3.960 ; seg_dynamic_drive:seg7_u0|cnt[4]             ; seg_dynamic_drive:seg7_u0|cnt[15]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.627      ;
+; -3.960 ; seg_dynamic_drive:seg7_u0|cnt[4]             ; seg_dynamic_drive:seg7_u0|cnt[14]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.627      ;
+; -3.958 ; ds18b20_drive:ds18b20_u0|cnt[1]              ; ds18b20_drive:ds18b20_u0|cnt[1]    ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.625      ;
+; -3.923 ; ds18b20_drive:ds18b20_u0|temperature_buf[10] ; seg_dynamic_drive:seg7_u0|HEX[2]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 1.000        ; -0.127     ; 4.463      ;
+; -3.920 ; ds18b20_drive:ds18b20_u0|temperature_buf[4]  ; seg_dynamic_drive:seg7_u0|HEX[3]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 1.000        ; -0.127     ; 4.460      ;
+; -3.895 ; ds18b20_drive:ds18b20_u0|temperature_buf[6]  ; seg_dynamic_drive:seg7_u0|HEX[1]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 1.000        ; -0.127     ; 4.435      ;
+; -3.894 ; ds18b20_drive:ds18b20_u0|cnt[0]              ; ds18b20_drive:ds18b20_u0|cnt[1]    ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.561      ;
+; -3.875 ; seg_dynamic_drive:seg7_u0|cnt[16]            ; seg_dynamic_drive:seg7_u0|SEG_S[0] ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.542      ;
+; -3.873 ; seg_dynamic_drive:seg7_u0|cnt[16]            ; seg_dynamic_drive:seg7_u0|SEG_S[3] ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.540      ;
+; -3.864 ; ds18b20_drive:ds18b20_u0|temperature_buf[4]  ; seg_dynamic_drive:seg7_u0|HEX[0]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 1.000        ; -0.127     ; 4.404      ;
+; -3.853 ; ds18b20_drive:ds18b20_u0|temperature_buf[0]  ; seg_dynamic_drive:seg7_u0|HEX[0]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 1.000        ; -0.127     ; 4.393      ;
+; -3.851 ; seg_dynamic_drive:seg7_u0|cnt[5]             ; seg_dynamic_drive:seg7_u0|cnt[13]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.518      ;
+; -3.851 ; seg_dynamic_drive:seg7_u0|cnt[5]             ; seg_dynamic_drive:seg7_u0|cnt[12]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.518      ;
+; -3.851 ; seg_dynamic_drive:seg7_u0|cnt[5]             ; seg_dynamic_drive:seg7_u0|cnt[11]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.518      ;
+; -3.851 ; seg_dynamic_drive:seg7_u0|cnt[5]             ; seg_dynamic_drive:seg7_u0|cnt[10]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.518      ;
+; -3.851 ; seg_dynamic_drive:seg7_u0|cnt[5]             ; seg_dynamic_drive:seg7_u0|cnt[9]   ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.518      ;
+; -3.838 ; seg_dynamic_drive:seg7_u0|cnt[5]             ; seg_dynamic_drive:seg7_u0|cnt[16]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.505      ;
+; -3.838 ; seg_dynamic_drive:seg7_u0|cnt[5]             ; seg_dynamic_drive:seg7_u0|cnt[15]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.505      ;
+; -3.838 ; seg_dynamic_drive:seg7_u0|cnt[5]             ; seg_dynamic_drive:seg7_u0|cnt[14]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.505      ;
+; -3.832 ; ds18b20_drive:ds18b20_u0|temperature_buf[0]  ; seg_dynamic_drive:seg7_u0|HEX[3]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 1.000        ; -0.127     ; 4.372      ;
+; -3.822 ; ds18b20_drive:ds18b20_u0|temperature_buf[9]  ; seg_dynamic_drive:seg7_u0|HEX[1]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 1.000        ; -0.127     ; 4.362      ;
+; -3.806 ; seg_dynamic_drive:seg7_u0|cnt[2]             ; seg_dynamic_drive:seg7_u0|cnt[13]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.473      ;
+; -3.806 ; seg_dynamic_drive:seg7_u0|cnt[2]             ; seg_dynamic_drive:seg7_u0|cnt[12]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.473      ;
+; -3.806 ; seg_dynamic_drive:seg7_u0|cnt[2]             ; seg_dynamic_drive:seg7_u0|cnt[11]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.473      ;
+; -3.806 ; seg_dynamic_drive:seg7_u0|cnt[2]             ; seg_dynamic_drive:seg7_u0|cnt[10]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.473      ;
+; -3.806 ; seg_dynamic_drive:seg7_u0|cnt[2]             ; seg_dynamic_drive:seg7_u0|cnt[9]   ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.473      ;
+; -3.793 ; seg_dynamic_drive:seg7_u0|cnt[2]             ; seg_dynamic_drive:seg7_u0|cnt[16]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.460      ;
+; -3.793 ; seg_dynamic_drive:seg7_u0|cnt[2]             ; seg_dynamic_drive:seg7_u0|cnt[15]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.460      ;
+; -3.793 ; seg_dynamic_drive:seg7_u0|cnt[2]             ; seg_dynamic_drive:seg7_u0|cnt[14]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.460      ;
+; -3.786 ; ds18b20_drive:ds18b20_u0|cnt[4]              ; ds18b20_drive:ds18b20_u0|cnt[1]    ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.453      ;
+; -3.785 ; ds18b20_drive:ds18b20_u0|cnt[4]              ; ds18b20_drive:ds18b20_u0|cnt[4]    ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.452      ;
+; -3.776 ; seg_dynamic_drive:seg7_u0|cnt[16]            ; seg_dynamic_drive:seg7_u0|SEG[7]   ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.443      ;
+; -3.775 ; ds18b20_drive:ds18b20_u0|temperature_buf[4]  ; seg_dynamic_drive:seg7_u0|HEX[2]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 1.000        ; -0.127     ; 4.315      ;
+; -3.760 ; ds18b20_drive:ds18b20_u0|cnt[0]              ; ds18b20_drive:ds18b20_u0|cnt[2]    ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.427      ;
+; -3.754 ; seg_dynamic_drive:seg7_u0|cnt[15]            ; seg_dynamic_drive:seg7_u0|HEX[2]   ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.421      ;
+; -3.740 ; ds18b20_drive:ds18b20_u0|temperature_buf[5]  ; seg_dynamic_drive:seg7_u0|HEX[3]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 1.000        ; -0.127     ; 4.280      ;
+; -3.737 ; seg_dynamic_drive:seg7_u0|cnt[0]             ; seg_dynamic_drive:seg7_u0|cnt[13]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.404      ;
+; -3.737 ; seg_dynamic_drive:seg7_u0|cnt[0]             ; seg_dynamic_drive:seg7_u0|cnt[12]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.404      ;
+; -3.737 ; seg_dynamic_drive:seg7_u0|cnt[0]             ; seg_dynamic_drive:seg7_u0|cnt[11]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.404      ;
+; -3.737 ; seg_dynamic_drive:seg7_u0|cnt[0]             ; seg_dynamic_drive:seg7_u0|cnt[10]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.404      ;
+; -3.737 ; seg_dynamic_drive:seg7_u0|cnt[0]             ; seg_dynamic_drive:seg7_u0|cnt[9]   ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.404      ;
+; -3.724 ; seg_dynamic_drive:seg7_u0|cnt[0]             ; seg_dynamic_drive:seg7_u0|cnt[16]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.391      ;
+; -3.724 ; seg_dynamic_drive:seg7_u0|cnt[0]             ; seg_dynamic_drive:seg7_u0|cnt[15]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.391      ;
+; -3.724 ; seg_dynamic_drive:seg7_u0|cnt[0]             ; seg_dynamic_drive:seg7_u0|cnt[14]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.391      ;
+; -3.721 ; ds18b20_drive:ds18b20_u0|temperature_buf[1]  ; seg_dynamic_drive:seg7_u0|HEX[0]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 1.000        ; -0.127     ; 4.261      ;
+; -3.705 ; seg_dynamic_drive:seg7_u0|cnt[1]             ; seg_dynamic_drive:seg7_u0|cnt[8]   ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.372      ;
+; -3.705 ; seg_dynamic_drive:seg7_u0|cnt[1]             ; seg_dynamic_drive:seg7_u0|cnt[7]   ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.372      ;
+; -3.705 ; seg_dynamic_drive:seg7_u0|cnt[1]             ; seg_dynamic_drive:seg7_u0|cnt[6]   ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.372      ;
+; -3.705 ; seg_dynamic_drive:seg7_u0|cnt[1]             ; seg_dynamic_drive:seg7_u0|cnt[5]   ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.372      ;
+; -3.705 ; seg_dynamic_drive:seg7_u0|cnt[1]             ; seg_dynamic_drive:seg7_u0|cnt[4]   ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.372      ;
+; -3.654 ; seg_dynamic_drive:seg7_u0|cnt[3]             ; seg_dynamic_drive:seg7_u0|cnt[13]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.321      ;
+; -3.654 ; seg_dynamic_drive:seg7_u0|cnt[3]             ; seg_dynamic_drive:seg7_u0|cnt[12]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.321      ;
+; -3.654 ; seg_dynamic_drive:seg7_u0|cnt[3]             ; seg_dynamic_drive:seg7_u0|cnt[11]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.321      ;
+; -3.654 ; seg_dynamic_drive:seg7_u0|cnt[3]             ; seg_dynamic_drive:seg7_u0|cnt[10]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.321      ;
+; -3.654 ; seg_dynamic_drive:seg7_u0|cnt[3]             ; seg_dynamic_drive:seg7_u0|cnt[9]   ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.321      ;
+; -3.642 ; ds18b20_drive:ds18b20_u0|temperature_buf[10] ; seg_dynamic_drive:seg7_u0|HEX[0]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 1.000        ; -0.127     ; 4.182      ;
+; -3.641 ; seg_dynamic_drive:seg7_u0|cnt[3]             ; seg_dynamic_drive:seg7_u0|cnt[16]  ; CLOCK_50                         ; CLOCK_50    ; 1.000        ; 0.000      ; 4.308      ;
++--------+----------------------------------------------+------------------------------------+----------------------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'CLOCK_50'                                                                                                                                                                   ;
++-------+---------------------------------------------+------------------------------------+----------------------------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                   ; To Node                            ; Launch Clock                     ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------+------------------------------------+----------------------------------+-------------+--------------+------------+------------+
+; 1.646 ; ds18b20_drive:ds18b20_u0|cnt[2]             ; ds18b20_drive:ds18b20_u0|cnt[5]    ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 1.867      ;
+; 1.667 ; seg_dynamic_drive:seg7_u0|cnt[0]            ; seg_dynamic_drive:seg7_u0|cnt[0]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 1.888      ;
+; 1.959 ; seg_dynamic_drive:seg7_u0|cnt[15]           ; seg_dynamic_drive:seg7_u0|SEG_S[2] ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.180      ;
+; 1.961 ; seg_dynamic_drive:seg7_u0|cnt[15]           ; seg_dynamic_drive:seg7_u0|SEG_S[1] ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.182      ;
+; 2.108 ; seg_dynamic_drive:seg7_u0|cnt[6]            ; seg_dynamic_drive:seg7_u0|cnt[6]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.329      ;
+; 2.117 ; seg_dynamic_drive:seg7_u0|cnt[11]           ; seg_dynamic_drive:seg7_u0|cnt[11]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; seg_dynamic_drive:seg7_u0|cnt[10]           ; seg_dynamic_drive:seg7_u0|cnt[10]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.338      ;
+; 2.125 ; seg_dynamic_drive:seg7_u0|cnt[9]            ; seg_dynamic_drive:seg7_u0|cnt[9]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.346      ;
+; 2.126 ; seg_dynamic_drive:seg7_u0|cnt[8]            ; seg_dynamic_drive:seg7_u0|cnt[8]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.347      ;
+; 2.137 ; seg_dynamic_drive:seg7_u0|cnt[16]           ; seg_dynamic_drive:seg7_u0|SEG_S[2] ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.358      ;
+; 2.138 ; seg_dynamic_drive:seg7_u0|cnt[0]            ; seg_dynamic_drive:seg7_u0|cnt[1]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.359      ;
+; 2.139 ; seg_dynamic_drive:seg7_u0|cnt[16]           ; seg_dynamic_drive:seg7_u0|SEG_S[1] ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.360      ;
+; 2.143 ; ds18b20_drive:ds18b20_u0|cnt[3]             ; ds18b20_drive:ds18b20_u0|cnt[5]    ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.364      ;
+; 2.167 ; ds18b20_drive:ds18b20_u0|cnt[5]             ; ds18b20_drive:ds18b20_u0|cnt[5]    ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.388      ;
+; 2.212 ; seg_dynamic_drive:seg7_u0|cnt[12]           ; seg_dynamic_drive:seg7_u0|cnt[12]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.433      ;
+; 2.221 ; seg_dynamic_drive:seg7_u0|cnt[7]            ; seg_dynamic_drive:seg7_u0|cnt[7]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; seg_dynamic_drive:seg7_u0|cnt[2]            ; seg_dynamic_drive:seg7_u0|cnt[2]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.442      ;
+; 2.230 ; seg_dynamic_drive:seg7_u0|cnt[4]            ; seg_dynamic_drive:seg7_u0|cnt[4]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.451      ;
+; 2.231 ; seg_dynamic_drive:seg7_u0|cnt[5]            ; seg_dynamic_drive:seg7_u0|cnt[5]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; seg_dynamic_drive:seg7_u0|cnt[3]            ; seg_dynamic_drive:seg7_u0|cnt[3]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.452      ;
+; 2.247 ; seg_dynamic_drive:seg7_u0|cnt[14]           ; seg_dynamic_drive:seg7_u0|cnt[14]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.468      ;
+; 2.248 ; seg_dynamic_drive:seg7_u0|cnt[13]           ; seg_dynamic_drive:seg7_u0|cnt[13]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.469      ;
+; 2.273 ; seg_dynamic_drive:seg7_u0|cnt[15]           ; seg_dynamic_drive:seg7_u0|cnt[15]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.494      ;
+; 2.558 ; ds18b20_drive:ds18b20_u0|cnt[0]             ; ds18b20_drive:ds18b20_u0|cnt[1]    ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.779      ;
+; 2.559 ; ds18b20_drive:ds18b20_u0|cnt[0]             ; ds18b20_drive:ds18b20_u0|cnt[4]    ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.780      ;
+; 2.605 ; seg_dynamic_drive:seg7_u0|cnt[1]            ; seg_dynamic_drive:seg7_u0|cnt[1]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.826      ;
+; 2.663 ; ds18b20_drive:ds18b20_u0|cnt[3]             ; ds18b20_drive:ds18b20_u0|cnt[4]    ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.884      ;
+; 2.664 ; ds18b20_drive:ds18b20_u0|cnt[3]             ; ds18b20_drive:ds18b20_u0|cnt[1]    ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.885      ;
+; 2.675 ; ds18b20_drive:ds18b20_u0|temperature_buf[3] ; seg_dynamic_drive:seg7_u0|HEX[3]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 0.000        ; -0.127     ; 2.769      ;
+; 2.744 ; ds18b20_drive:ds18b20_u0|cnt[2]             ; ds18b20_drive:ds18b20_u0|cnt[4]    ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.965      ;
+; 2.745 ; ds18b20_drive:ds18b20_u0|cnt[2]             ; ds18b20_drive:ds18b20_u0|cnt[1]    ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 2.966      ;
+; 2.783 ; seg_dynamic_drive:seg7_u0|cnt[16]           ; seg_dynamic_drive:seg7_u0|cnt[16]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.004      ;
+; 2.867 ; ds18b20_drive:ds18b20_u0|cnt[3]             ; ds18b20_drive:ds18b20_u0|cnt[3]    ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.088      ;
+; 2.940 ; seg_dynamic_drive:seg7_u0|cnt[6]            ; seg_dynamic_drive:seg7_u0|cnt[7]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.161      ;
+; 2.949 ; seg_dynamic_drive:seg7_u0|cnt[11]           ; seg_dynamic_drive:seg7_u0|cnt[12]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.170      ;
+; 2.949 ; seg_dynamic_drive:seg7_u0|cnt[10]           ; seg_dynamic_drive:seg7_u0|cnt[11]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.170      ;
+; 2.957 ; seg_dynamic_drive:seg7_u0|cnt[9]            ; seg_dynamic_drive:seg7_u0|cnt[10]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.178      ;
+; 2.970 ; seg_dynamic_drive:seg7_u0|cnt[0]            ; seg_dynamic_drive:seg7_u0|cnt[2]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.191      ;
+; 3.029 ; ds18b20_drive:ds18b20_u0|temperature_buf[2] ; seg_dynamic_drive:seg7_u0|HEX[2]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 0.000        ; -0.127     ; 3.123      ;
+; 3.051 ; seg_dynamic_drive:seg7_u0|cnt[6]            ; seg_dynamic_drive:seg7_u0|cnt[8]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.272      ;
+; 3.059 ; ds18b20_drive:ds18b20_u0|temperature_buf[7] ; seg_dynamic_drive:seg7_u0|HEX[3]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 0.000        ; -0.127     ; 3.153      ;
+; 3.060 ; seg_dynamic_drive:seg7_u0|cnt[11]           ; seg_dynamic_drive:seg7_u0|cnt[13]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.281      ;
+; 3.060 ; seg_dynamic_drive:seg7_u0|cnt[10]           ; seg_dynamic_drive:seg7_u0|cnt[12]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.281      ;
+; 3.068 ; seg_dynamic_drive:seg7_u0|cnt[9]            ; seg_dynamic_drive:seg7_u0|cnt[11]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.289      ;
+; 3.081 ; seg_dynamic_drive:seg7_u0|cnt[0]            ; seg_dynamic_drive:seg7_u0|cnt[3]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.302      ;
+; 3.133 ; ds18b20_drive:ds18b20_u0|cnt[4]             ; ds18b20_drive:ds18b20_u0|cnt[5]    ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.354      ;
+; 3.152 ; seg_dynamic_drive:seg7_u0|cnt[12]           ; seg_dynamic_drive:seg7_u0|cnt[13]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.373      ;
+; 3.161 ; seg_dynamic_drive:seg7_u0|cnt[7]            ; seg_dynamic_drive:seg7_u0|cnt[8]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.382      ;
+; 3.161 ; seg_dynamic_drive:seg7_u0|cnt[2]            ; seg_dynamic_drive:seg7_u0|cnt[3]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.382      ;
+; 3.170 ; seg_dynamic_drive:seg7_u0|cnt[4]            ; seg_dynamic_drive:seg7_u0|cnt[5]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.391      ;
+; 3.171 ; seg_dynamic_drive:seg7_u0|cnt[5]            ; seg_dynamic_drive:seg7_u0|cnt[6]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.392      ;
+; 3.171 ; seg_dynamic_drive:seg7_u0|cnt[10]           ; seg_dynamic_drive:seg7_u0|cnt[13]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.392      ;
+; 3.179 ; seg_dynamic_drive:seg7_u0|cnt[9]            ; seg_dynamic_drive:seg7_u0|cnt[12]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.400      ;
+; 3.187 ; seg_dynamic_drive:seg7_u0|cnt[14]           ; seg_dynamic_drive:seg7_u0|cnt[15]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.408      ;
+; 3.213 ; seg_dynamic_drive:seg7_u0|cnt[15]           ; seg_dynamic_drive:seg7_u0|cnt[16]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.434      ;
+; 3.249 ; ds18b20_drive:ds18b20_u0|temperature_buf[7] ; seg_dynamic_drive:seg7_u0|HEX[2]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 0.000        ; -0.127     ; 3.343      ;
+; 3.264 ; ds18b20_drive:ds18b20_u0|cnt[0]             ; ds18b20_drive:ds18b20_u0|cnt[0]    ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.485      ;
+; 3.265 ; ds18b20_drive:ds18b20_u0|cnt[5]             ; ds18b20_drive:ds18b20_u0|cnt[4]    ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.486      ;
+; 3.266 ; ds18b20_drive:ds18b20_u0|cnt[5]             ; ds18b20_drive:ds18b20_u0|cnt[1]    ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.487      ;
+; 3.281 ; seg_dynamic_drive:seg7_u0|cnt[4]            ; seg_dynamic_drive:seg7_u0|cnt[6]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.502      ;
+; 3.282 ; seg_dynamic_drive:seg7_u0|cnt[5]            ; seg_dynamic_drive:seg7_u0|cnt[7]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.503      ;
+; 3.290 ; seg_dynamic_drive:seg7_u0|cnt[9]            ; seg_dynamic_drive:seg7_u0|cnt[13]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.511      ;
+; 3.298 ; seg_dynamic_drive:seg7_u0|cnt[14]           ; seg_dynamic_drive:seg7_u0|cnt[16]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.519      ;
+; 3.305 ; ds18b20_drive:ds18b20_u0|cnt[1]             ; ds18b20_drive:ds18b20_u0|cnt[5]    ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.526      ;
+; 3.356 ; ds18b20_drive:ds18b20_u0|temperature_buf[3] ; seg_dynamic_drive:seg7_u0|HEX[2]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 0.000        ; -0.127     ; 3.450      ;
+; 3.392 ; seg_dynamic_drive:seg7_u0|cnt[4]            ; seg_dynamic_drive:seg7_u0|cnt[7]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.613      ;
+; 3.393 ; seg_dynamic_drive:seg7_u0|cnt[5]            ; seg_dynamic_drive:seg7_u0|cnt[8]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.614      ;
+; 3.416 ; ds18b20_drive:ds18b20_u0|cnt[2]             ; ds18b20_drive:ds18b20_u0|cnt[2]    ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.637      ;
+; 3.421 ; seg_dynamic_drive:seg7_u0|cnt[16]           ; seg_dynamic_drive:seg7_u0|HEX[2]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.642      ;
+; 3.427 ; seg_dynamic_drive:seg7_u0|cnt[16]           ; seg_dynamic_drive:seg7_u0|HEX[0]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.648      ;
+; 3.429 ; ds18b20_drive:ds18b20_u0|temperature_buf[2] ; seg_dynamic_drive:seg7_u0|HEX[1]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 0.000        ; -0.127     ; 3.523      ;
+; 3.459 ; seg_dynamic_drive:seg7_u0|cnt[15]           ; seg_dynamic_drive:seg7_u0|SEG_S[3] ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.680      ;
+; 3.460 ; seg_dynamic_drive:seg7_u0|cnt[15]           ; seg_dynamic_drive:seg7_u0|SEG_S[0] ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.681      ;
+; 3.492 ; seg_dynamic_drive:seg7_u0|cnt[3]            ; seg_dynamic_drive:seg7_u0|cnt[8]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; seg_dynamic_drive:seg7_u0|cnt[3]            ; seg_dynamic_drive:seg7_u0|cnt[7]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; seg_dynamic_drive:seg7_u0|cnt[3]            ; seg_dynamic_drive:seg7_u0|cnt[6]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; seg_dynamic_drive:seg7_u0|cnt[3]            ; seg_dynamic_drive:seg7_u0|cnt[5]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.713      ;
+; 3.492 ; seg_dynamic_drive:seg7_u0|cnt[3]            ; seg_dynamic_drive:seg7_u0|cnt[4]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.713      ;
+; 3.503 ; seg_dynamic_drive:seg7_u0|cnt[4]            ; seg_dynamic_drive:seg7_u0|cnt[8]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.724      ;
+; 3.509 ; seg_dynamic_drive:seg7_u0|cnt[13]           ; seg_dynamic_drive:seg7_u0|cnt[16]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.730      ;
+; 3.509 ; seg_dynamic_drive:seg7_u0|cnt[13]           ; seg_dynamic_drive:seg7_u0|cnt[15]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.730      ;
+; 3.509 ; seg_dynamic_drive:seg7_u0|cnt[13]           ; seg_dynamic_drive:seg7_u0|cnt[14]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.730      ;
+; 3.529 ; seg_dynamic_drive:seg7_u0|cnt[11]           ; seg_dynamic_drive:seg7_u0|cnt[16]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.750      ;
+; 3.529 ; seg_dynamic_drive:seg7_u0|cnt[11]           ; seg_dynamic_drive:seg7_u0|cnt[15]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.750      ;
+; 3.529 ; seg_dynamic_drive:seg7_u0|cnt[11]           ; seg_dynamic_drive:seg7_u0|cnt[14]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.750      ;
+; 3.545 ; seg_dynamic_drive:seg7_u0|cnt[1]            ; seg_dynamic_drive:seg7_u0|cnt[2]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.766      ;
+; 3.550 ; seg_dynamic_drive:seg7_u0|cnt[0]            ; seg_dynamic_drive:seg7_u0|cnt[8]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.771      ;
+; 3.550 ; seg_dynamic_drive:seg7_u0|cnt[0]            ; seg_dynamic_drive:seg7_u0|cnt[7]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.771      ;
+; 3.550 ; seg_dynamic_drive:seg7_u0|cnt[0]            ; seg_dynamic_drive:seg7_u0|cnt[6]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.771      ;
+; 3.550 ; seg_dynamic_drive:seg7_u0|cnt[0]            ; seg_dynamic_drive:seg7_u0|cnt[5]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.771      ;
+; 3.550 ; seg_dynamic_drive:seg7_u0|cnt[0]            ; seg_dynamic_drive:seg7_u0|cnt[4]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.771      ;
+; 3.557 ; ds18b20_drive:ds18b20_u0|temperature_buf[1] ; seg_dynamic_drive:seg7_u0|HEX[2]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 0.000        ; -0.127     ; 3.651      ;
+; 3.572 ; seg_dynamic_drive:seg7_u0|cnt[15]           ; seg_dynamic_drive:seg7_u0|HEX[2]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.793      ;
+; 3.579 ; seg_dynamic_drive:seg7_u0|cnt[15]           ; seg_dynamic_drive:seg7_u0|HEX[0]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.800      ;
+; 3.621 ; seg_dynamic_drive:seg7_u0|cnt[12]           ; seg_dynamic_drive:seg7_u0|cnt[16]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.842      ;
+; 3.621 ; seg_dynamic_drive:seg7_u0|cnt[12]           ; seg_dynamic_drive:seg7_u0|cnt[15]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.842      ;
+; 3.621 ; seg_dynamic_drive:seg7_u0|cnt[12]           ; seg_dynamic_drive:seg7_u0|cnt[14]  ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.842      ;
+; 3.621 ; ds18b20_drive:ds18b20_u0|temperature_buf[2] ; seg_dynamic_drive:seg7_u0|HEX[0]   ; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50    ; 0.000        ; -0.127     ; 3.715      ;
+; 3.630 ; seg_dynamic_drive:seg7_u0|cnt[2]            ; seg_dynamic_drive:seg7_u0|cnt[8]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.851      ;
+; 3.630 ; seg_dynamic_drive:seg7_u0|cnt[2]            ; seg_dynamic_drive:seg7_u0|cnt[7]   ; CLOCK_50                         ; CLOCK_50    ; 0.000        ; 0.000      ; 3.851      ;
++-------+---------------------------------------------+------------------------------------+----------------------------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'ds18b20_drive:ds18b20_u0|clk_1us'                                                                                                                                                                           ;
++-------+----------------------------------------------+----------------------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+; Slack ; From Node                                    ; To Node                                      ; Launch Clock                     ; Latch Clock                      ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------+----------------------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+; 1.649 ; ds18b20_drive:ds18b20_u0|state.WRITE1        ; ds18b20_drive:ds18b20_u0|state.WRITE1        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 1.870      ;
+; 1.659 ; ds18b20_drive:ds18b20_u0|cnt_1us[19]         ; ds18b20_drive:ds18b20_u0|cnt_1us[19]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 1.880      ;
+; 1.670 ; ds18b20_drive:ds18b20_u0|temperature_buf[8]  ; ds18b20_drive:ds18b20_u0|temperature_buf[8]  ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 1.891      ;
+; 1.700 ; ds18b20_drive:ds18b20_u0|temperature_buf[1]  ; ds18b20_drive:ds18b20_u0|temperature_buf[1]  ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 1.921      ;
+; 1.701 ; ds18b20_drive:ds18b20_u0|temperature_buf[4]  ; ds18b20_drive:ds18b20_u0|temperature_buf[4]  ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 1.922      ;
+; 1.702 ; ds18b20_drive:ds18b20_u0|temperature_buf[2]  ; ds18b20_drive:ds18b20_u0|temperature_buf[2]  ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 1.923      ;
+; 1.707 ; ds18b20_drive:ds18b20_u0|state.S1            ; ds18b20_drive:ds18b20_u0|state.S1            ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 1.928      ;
+; 1.899 ; ds18b20_drive:ds18b20_u0|state.S4            ; ds18b20_drive:ds18b20_u0|state.S4            ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.120      ;
+; 1.938 ; ds18b20_drive:ds18b20_u0|temperature_buf[3]  ; ds18b20_drive:ds18b20_u0|temperature_buf[3]  ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.159      ;
+; 2.107 ; ds18b20_drive:ds18b20_u0|one_wire_buf~en     ; ds18b20_drive:ds18b20_u0|one_wire_buf~en     ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.328      ;
+; 2.116 ; ds18b20_drive:ds18b20_u0|cnt_1us[0]          ; ds18b20_drive:ds18b20_u0|cnt_1us[0]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.337      ;
+; 2.116 ; ds18b20_drive:ds18b20_u0|cnt_1us[10]         ; ds18b20_drive:ds18b20_u0|cnt_1us[10]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.337      ;
+; 2.117 ; ds18b20_drive:ds18b20_u0|cnt_1us[7]          ; ds18b20_drive:ds18b20_u0|cnt_1us[7]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.338      ;
+; 2.117 ; ds18b20_drive:ds18b20_u0|cnt_1us[17]         ; ds18b20_drive:ds18b20_u0|cnt_1us[17]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.338      ;
+; 2.126 ; ds18b20_drive:ds18b20_u0|cnt_1us[2]          ; ds18b20_drive:ds18b20_u0|cnt_1us[2]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; ds18b20_drive:ds18b20_u0|cnt_1us[1]          ; ds18b20_drive:ds18b20_u0|cnt_1us[1]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; ds18b20_drive:ds18b20_u0|cnt_1us[12]         ; ds18b20_drive:ds18b20_u0|cnt_1us[12]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; ds18b20_drive:ds18b20_u0|cnt_1us[11]         ; ds18b20_drive:ds18b20_u0|cnt_1us[11]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.347      ;
+; 2.126 ; ds18b20_drive:ds18b20_u0|cnt_1us[9]          ; ds18b20_drive:ds18b20_u0|cnt_1us[9]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.347      ;
+; 2.134 ; ds18b20_drive:ds18b20_u0|step[0]             ; ds18b20_drive:ds18b20_u0|step[0]             ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.355      ;
+; 2.144 ; ds18b20_drive:ds18b20_u0|step[1]             ; ds18b20_drive:ds18b20_u0|step[1]             ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.365      ;
+; 2.148 ; ds18b20_drive:ds18b20_u0|temperature_buf[9]  ; ds18b20_drive:ds18b20_u0|temperature_buf[9]  ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.369      ;
+; 2.161 ; ds18b20_drive:ds18b20_u0|temperature_buf[5]  ; ds18b20_drive:ds18b20_u0|temperature_buf[5]  ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.382      ;
+; 2.163 ; ds18b20_drive:ds18b20_u0|temperature_buf[10] ; ds18b20_drive:ds18b20_u0|temperature_buf[10] ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.384      ;
+; 2.173 ; ds18b20_drive:ds18b20_u0|temperature_buf[6]  ; ds18b20_drive:ds18b20_u0|temperature_buf[6]  ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.394      ;
+; 2.190 ; ds18b20_drive:ds18b20_u0|bit_valid[3]        ; ds18b20_drive:ds18b20_u0|bit_valid[3]        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.411      ;
+; 2.221 ; ds18b20_drive:ds18b20_u0|cnt_1us[3]          ; ds18b20_drive:ds18b20_u0|cnt_1us[3]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; ds18b20_drive:ds18b20_u0|cnt_1us[8]          ; ds18b20_drive:ds18b20_u0|cnt_1us[8]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; ds18b20_drive:ds18b20_u0|cnt_1us[18]         ; ds18b20_drive:ds18b20_u0|cnt_1us[18]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.442      ;
+; 2.221 ; ds18b20_drive:ds18b20_u0|cnt_1us[13]         ; ds18b20_drive:ds18b20_u0|cnt_1us[13]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.442      ;
+; 2.230 ; ds18b20_drive:ds18b20_u0|state.S2            ; ds18b20_drive:ds18b20_u0|state.S2            ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.451      ;
+; 2.230 ; ds18b20_drive:ds18b20_u0|cnt_1us[5]          ; ds18b20_drive:ds18b20_u0|cnt_1us[5]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.451      ;
+; 2.230 ; ds18b20_drive:ds18b20_u0|cnt_1us[15]         ; ds18b20_drive:ds18b20_u0|cnt_1us[15]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.451      ;
+; 2.231 ; ds18b20_drive:ds18b20_u0|cnt_1us[6]          ; ds18b20_drive:ds18b20_u0|cnt_1us[6]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; ds18b20_drive:ds18b20_u0|cnt_1us[4]          ; ds18b20_drive:ds18b20_u0|cnt_1us[4]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; ds18b20_drive:ds18b20_u0|cnt_1us[16]         ; ds18b20_drive:ds18b20_u0|cnt_1us[16]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.452      ;
+; 2.231 ; ds18b20_drive:ds18b20_u0|cnt_1us[14]         ; ds18b20_drive:ds18b20_u0|cnt_1us[14]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.452      ;
+; 2.242 ; ds18b20_drive:ds18b20_u0|step[2]             ; ds18b20_drive:ds18b20_u0|step[2]             ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.463      ;
+; 2.249 ; ds18b20_drive:ds18b20_u0|bit_valid[0]        ; ds18b20_drive:ds18b20_u0|bit_valid[0]        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.470      ;
+; 2.253 ; ds18b20_drive:ds18b20_u0|temperature_buf[0]  ; ds18b20_drive:ds18b20_u0|temperature_buf[0]  ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.474      ;
+; 2.260 ; ds18b20_drive:ds18b20_u0|step[3]             ; ds18b20_drive:ds18b20_u0|step[3]             ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.481      ;
+; 2.264 ; ds18b20_drive:ds18b20_u0|state.READ3         ; ds18b20_drive:ds18b20_u0|state.READ3         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.485      ;
+; 2.272 ; ds18b20_drive:ds18b20_u0|step[4]             ; ds18b20_drive:ds18b20_u0|step[4]             ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.493      ;
+; 2.276 ; ds18b20_drive:ds18b20_u0|bit_valid[0]        ; ds18b20_drive:ds18b20_u0|bit_valid[1]        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.497      ;
+; 2.284 ; ds18b20_drive:ds18b20_u0|step[5]             ; ds18b20_drive:ds18b20_u0|step[5]             ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.505      ;
+; 2.295 ; ds18b20_drive:ds18b20_u0|temperature_buf[7]  ; ds18b20_drive:ds18b20_u0|temperature_buf[7]  ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.516      ;
+; 2.338 ; ds18b20_drive:ds18b20_u0|bit_valid[2]        ; ds18b20_drive:ds18b20_u0|bit_valid[2]        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.559      ;
+; 2.356 ; ds18b20_drive:ds18b20_u0|bit_valid[2]        ; ds18b20_drive:ds18b20_u0|bit_valid[3]        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.577      ;
+; 2.565 ; ds18b20_drive:ds18b20_u0|state.READ3         ; ds18b20_drive:ds18b20_u0|state.S7            ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.786      ;
+; 2.605 ; ds18b20_drive:ds18b20_u0|bit_valid[1]        ; ds18b20_drive:ds18b20_u0|bit_valid[1]        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.826      ;
+; 2.694 ; ds18b20_drive:ds18b20_u0|state.S3            ; ds18b20_drive:ds18b20_u0|state.S4            ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 2.915      ;
+; 2.948 ; ds18b20_drive:ds18b20_u0|cnt_1us[0]          ; ds18b20_drive:ds18b20_u0|cnt_1us[1]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.169      ;
+; 2.948 ; ds18b20_drive:ds18b20_u0|cnt_1us[10]         ; ds18b20_drive:ds18b20_u0|cnt_1us[11]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.169      ;
+; 2.949 ; ds18b20_drive:ds18b20_u0|cnt_1us[7]          ; ds18b20_drive:ds18b20_u0|cnt_1us[8]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.170      ;
+; 2.949 ; ds18b20_drive:ds18b20_u0|cnt_1us[17]         ; ds18b20_drive:ds18b20_u0|cnt_1us[18]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.170      ;
+; 2.958 ; ds18b20_drive:ds18b20_u0|cnt_1us[1]          ; ds18b20_drive:ds18b20_u0|cnt_1us[2]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958 ; ds18b20_drive:ds18b20_u0|cnt_1us[2]          ; ds18b20_drive:ds18b20_u0|cnt_1us[3]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958 ; ds18b20_drive:ds18b20_u0|cnt_1us[12]         ; ds18b20_drive:ds18b20_u0|cnt_1us[13]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.179      ;
+; 2.958 ; ds18b20_drive:ds18b20_u0|cnt_1us[11]         ; ds18b20_drive:ds18b20_u0|cnt_1us[12]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.179      ;
+; 2.966 ; ds18b20_drive:ds18b20_u0|step[0]             ; ds18b20_drive:ds18b20_u0|step[1]             ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.187      ;
+; 2.976 ; ds18b20_drive:ds18b20_u0|step[1]             ; ds18b20_drive:ds18b20_u0|step[2]             ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.197      ;
+; 3.059 ; ds18b20_drive:ds18b20_u0|cnt_1us[0]          ; ds18b20_drive:ds18b20_u0|cnt_1us[2]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.280      ;
+; 3.059 ; ds18b20_drive:ds18b20_u0|cnt_1us[10]         ; ds18b20_drive:ds18b20_u0|cnt_1us[12]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.280      ;
+; 3.060 ; ds18b20_drive:ds18b20_u0|cnt_1us[17]         ; ds18b20_drive:ds18b20_u0|cnt_1us[19]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.281      ;
+; 3.060 ; ds18b20_drive:ds18b20_u0|cnt_1us[7]          ; ds18b20_drive:ds18b20_u0|cnt_1us[9]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.281      ;
+; 3.069 ; ds18b20_drive:ds18b20_u0|cnt_1us[2]          ; ds18b20_drive:ds18b20_u0|cnt_1us[4]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.290      ;
+; 3.069 ; ds18b20_drive:ds18b20_u0|cnt_1us[12]         ; ds18b20_drive:ds18b20_u0|cnt_1us[14]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.290      ;
+; 3.069 ; ds18b20_drive:ds18b20_u0|cnt_1us[1]          ; ds18b20_drive:ds18b20_u0|cnt_1us[3]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.290      ;
+; 3.069 ; ds18b20_drive:ds18b20_u0|cnt_1us[11]         ; ds18b20_drive:ds18b20_u0|cnt_1us[13]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.290      ;
+; 3.077 ; ds18b20_drive:ds18b20_u0|step[0]             ; ds18b20_drive:ds18b20_u0|step[2]             ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.298      ;
+; 3.087 ; ds18b20_drive:ds18b20_u0|step[1]             ; ds18b20_drive:ds18b20_u0|step[3]             ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.308      ;
+; 3.134 ; ds18b20_drive:ds18b20_u0|state.S5            ; ds18b20_drive:ds18b20_u0|state.S5            ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.355      ;
+; 3.152 ; ds18b20_drive:ds18b20_u0|state.S7            ; ds18b20_drive:ds18b20_u0|state.READ0         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.373      ;
+; 3.161 ; ds18b20_drive:ds18b20_u0|cnt_1us[18]         ; ds18b20_drive:ds18b20_u0|cnt_1us[19]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.382      ;
+; 3.161 ; ds18b20_drive:ds18b20_u0|cnt_1us[8]          ; ds18b20_drive:ds18b20_u0|cnt_1us[9]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.382      ;
+; 3.161 ; ds18b20_drive:ds18b20_u0|cnt_1us[3]          ; ds18b20_drive:ds18b20_u0|cnt_1us[4]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.382      ;
+; 3.161 ; ds18b20_drive:ds18b20_u0|cnt_1us[13]         ; ds18b20_drive:ds18b20_u0|cnt_1us[14]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.382      ;
+; 3.170 ; ds18b20_drive:ds18b20_u0|cnt_1us[5]          ; ds18b20_drive:ds18b20_u0|cnt_1us[6]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170 ; ds18b20_drive:ds18b20_u0|cnt_1us[15]         ; ds18b20_drive:ds18b20_u0|cnt_1us[16]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170 ; ds18b20_drive:ds18b20_u0|cnt_1us[0]          ; ds18b20_drive:ds18b20_u0|cnt_1us[3]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.391      ;
+; 3.170 ; ds18b20_drive:ds18b20_u0|cnt_1us[10]         ; ds18b20_drive:ds18b20_u0|cnt_1us[13]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.391      ;
+; 3.171 ; ds18b20_drive:ds18b20_u0|cnt_1us[6]          ; ds18b20_drive:ds18b20_u0|cnt_1us[7]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.392      ;
+; 3.171 ; ds18b20_drive:ds18b20_u0|cnt_1us[16]         ; ds18b20_drive:ds18b20_u0|cnt_1us[17]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.392      ;
+; 3.180 ; ds18b20_drive:ds18b20_u0|cnt_1us[1]          ; ds18b20_drive:ds18b20_u0|cnt_1us[4]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.401      ;
+; 3.180 ; ds18b20_drive:ds18b20_u0|cnt_1us[11]         ; ds18b20_drive:ds18b20_u0|cnt_1us[14]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.401      ;
+; 3.182 ; ds18b20_drive:ds18b20_u0|step[2]             ; ds18b20_drive:ds18b20_u0|step[3]             ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.403      ;
+; 3.188 ; ds18b20_drive:ds18b20_u0|step[0]             ; ds18b20_drive:ds18b20_u0|step[3]             ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.409      ;
+; 3.212 ; ds18b20_drive:ds18b20_u0|step[4]             ; ds18b20_drive:ds18b20_u0|step[5]             ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.433      ;
+; 3.252 ; ds18b20_drive:ds18b20_u0|state.S00           ; ds18b20_drive:ds18b20_u0|state.S0            ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.473      ;
+; 3.281 ; ds18b20_drive:ds18b20_u0|cnt_1us[5]          ; ds18b20_drive:ds18b20_u0|cnt_1us[7]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.502      ;
+; 3.281 ; ds18b20_drive:ds18b20_u0|cnt_1us[15]         ; ds18b20_drive:ds18b20_u0|cnt_1us[17]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.502      ;
+; 3.281 ; ds18b20_drive:ds18b20_u0|cnt_1us[0]          ; ds18b20_drive:ds18b20_u0|cnt_1us[4]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.502      ;
+; 3.281 ; ds18b20_drive:ds18b20_u0|cnt_1us[10]         ; ds18b20_drive:ds18b20_u0|cnt_1us[14]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.502      ;
+; 3.282 ; ds18b20_drive:ds18b20_u0|cnt_1us[6]          ; ds18b20_drive:ds18b20_u0|cnt_1us[8]          ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.503      ;
+; 3.282 ; ds18b20_drive:ds18b20_u0|cnt_1us[16]         ; ds18b20_drive:ds18b20_u0|cnt_1us[18]         ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.503      ;
+; 3.285 ; ds18b20_drive:ds18b20_u0|step[5]             ; ds18b20_drive:ds18b20_u0|state.WRITE01       ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.506      ;
+; 3.295 ; ds18b20_drive:ds18b20_u0|state.S7            ; ds18b20_drive:ds18b20_u0|state.S7            ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.516      ;
+; 3.369 ; ds18b20_drive:ds18b20_u0|step[0]             ; ds18b20_drive:ds18b20_u0|state.WRITE01       ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.590      ;
+; 3.380 ; ds18b20_drive:ds18b20_u0|bit_valid[1]        ; ds18b20_drive:ds18b20_u0|bit_valid[3]        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.601      ;
+; 3.386 ; ds18b20_drive:ds18b20_u0|bit_valid[1]        ; ds18b20_drive:ds18b20_u0|bit_valid[2]        ; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 0.000        ; 0.000      ; 3.607      ;
++-------+----------------------------------------------+----------------------------------------------+----------------------------------+----------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                 ;
++----------------------------------+----------------------------------+----------+----------+----------+----------+
+; From Clock                       ; To Clock                         ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------------+----------------------------------+----------+----------+----------+----------+
+; CLOCK_50                         ; CLOCK_50                         ; 346      ; 0        ; 0        ; 0        ;
+; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50                         ; 47       ; 0        ; 0        ; 0        ;
+; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 2280     ; 0        ; 0        ; 0        ;
++----------------------------------+----------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                  ;
++----------------------------------+----------------------------------+----------+----------+----------+----------+
+; From Clock                       ; To Clock                         ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++----------------------------------+----------------------------------+----------+----------+----------+----------+
+; CLOCK_50                         ; CLOCK_50                         ; 346      ; 0        ; 0        ; 0        ;
+; ds18b20_drive:ds18b20_u0|clk_1us ; CLOCK_50                         ; 47       ; 0        ; 0        ; 0        ;
+; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; 2280     ; 0        ; 0        ; 0        ;
++----------------------------------+----------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 65    ; 65   ;
+; Unconstrained Output Ports      ; 13    ; 13   ;
+; Unconstrained Output Port Paths ; 34    ; 34   ;
++---------------------------------+-------+------+
+
+
++------------------------------------------------------------------------------------------+
+; Clock Status Summary                                                                     ;
++----------------------------------+----------------------------------+------+-------------+
+; Target                           ; Clock                            ; Type ; Status      ;
++----------------------------------+----------------------------------+------+-------------+
+; CLOCK_50                         ; CLOCK_50                         ; Base ; Constrained ;
+; ds18b20_drive:ds18b20_u0|clk_1us ; ds18b20_drive:ds18b20_u0|clk_1us ; Base ; Constrained ;
++----------------------------------+----------------------------------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; DS18B20    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Q_KEY      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; DS18B20     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG7_SEG[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG7_SEG[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG7_SEG[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG7_SEG[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG7_SEG[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG7_SEG[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG7_SEG[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG7_SEG[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG7_SEL[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG7_SEL[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG7_SEL[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG7_SEL[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; DS18B20    ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; Q_KEY      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; DS18B20     ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG7_SEG[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG7_SEG[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG7_SEG[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG7_SEG[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG7_SEG[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG7_SEG[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG7_SEG[6] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG7_SEG[7] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG7_SEL[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG7_SEL[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG7_SEL[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; SEG7_SEL[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Sun Sep 17 14:28:45 2023
+Info: Command: quartus_sta ds18b20_seg7 -c ds18b20_seg7
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'ds18b20_seg7.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLOCK_50 CLOCK_50
+    Info (332105): create_clock -period 1.000 -name ds18b20_drive:ds18b20_u0|clk_1us ds18b20_drive:ds18b20_u0|clk_1us
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Can't run Report Timing Closure Recommendations. The current device family is not supported.
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -12.420
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):   -12.420            -424.017 ds18b20_drive:ds18b20_u0|clk_1us 
+    Info (332119):    -5.120            -126.055 CLOCK_50 
+Info (332146): Worst-case hold slack is 1.646
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     1.646               0.000 CLOCK_50 
+    Info (332119):     1.649               0.000 ds18b20_drive:ds18b20_u0|clk_1us 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.289
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -2.289              -2.289 CLOCK_50 
+    Info (332119):     0.234               0.000 ds18b20_drive:ds18b20_u0|clk_1us 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 357 megabytes
+    Info: Processing ended: Sun Sep 17 14:28:45 2023
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

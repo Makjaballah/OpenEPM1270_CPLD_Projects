@@ -1,0 +1,11 @@
+Fitter Status : Successful - Sun Sep 17 14:28:43 2023
+Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Revision Name : ds18b20_seg7
+Top-level Entity Name : ds18b20_seg7
+Family : MAX II
+Device : EPM1270T144C5
+Timing Models : Final
+Total logic elements : 233 / 1,270 ( 18 % )
+Total pins : 15 / 116 ( 13 % )
+Total virtual pins : 0
+UFM blocks : 0 / 1 ( 0 % )

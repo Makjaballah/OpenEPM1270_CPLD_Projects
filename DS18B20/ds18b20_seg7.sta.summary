@@ -1,0 +1,29 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'ds18b20_drive:ds18b20_u0|clk_1us'
+Slack : -12.420
+TNS   : -424.017
+
+Type  : Setup 'CLOCK_50'
+Slack : -5.120
+TNS   : -126.055
+
+Type  : Hold 'CLOCK_50'
+Slack : 1.646
+TNS   : 0.000
+
+Type  : Hold 'ds18b20_drive:ds18b20_u0|clk_1us'
+Slack : 1.649
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'CLOCK_50'
+Slack : -2.289
+TNS   : -2.289
+
+Type  : Minimum Pulse Width 'ds18b20_drive:ds18b20_u0|clk_1us'
+Slack : 0.234
+TNS   : 0.000
+
+------------------------------------------------------------
