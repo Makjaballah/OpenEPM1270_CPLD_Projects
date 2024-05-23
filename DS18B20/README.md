@@ -1,6 +1,6 @@
 # DS18B20 project
 
-This VHDL project presents the implementation of a temperature controller on the OpenEPM1270 , CPLD Development Board, based on DS18B20 1-Wire digital thermometer.
+This project presents the implementation of a temperature controller on the OpenEPM1270 , CPLD Development Board, based on DS18B20 1-Wire digital thermometer.
 
 
 ## RTL implementation block diagram of the DS18B20 project
